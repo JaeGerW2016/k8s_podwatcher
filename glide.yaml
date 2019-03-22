@@ -1,15 +1,15 @@
-package: k8s_podwatcher-master
+package: k8s_podwatcher
 import:
 - package: github.com/prometheus/alertmanager
-  version: ^0.16.1
+  version: ~0.16.1
   subpackages:
   - client
 - package: github.com/prometheus/client_golang
-  version: ^0.9.2
+  version: ~0.9.2
   subpackages:
   - api
 - package: gopkg.in/gomail.v1
-  version: ^2.0.0
+  version: ~2.0.0
 - package: k8s.io/api
   subpackages:
   - core/v1
@@ -20,7 +20,7 @@ import:
   - pkg/util/runtime
   - pkg/watch
 - package: k8s.io/client-go
-  version: ^10.0.0
+  version: ~10.0.0
   subpackages:
   - kubernetes
   - rest
@@ -28,4 +28,4 @@ import:
   - tools/clientcmd
   - util/workqueue
 - package: k8s.io/klog
-  version: ^0.2.0
+  version: ~0.2.0
