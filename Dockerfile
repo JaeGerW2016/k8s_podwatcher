@@ -16,5 +16,5 @@ RUN apk add --no-cache -U tzdata ca-certificates
 
 COPY --from=build /tmp/k8s_podwatcher /usr/bin/k8s_podwatcher
 
-ENDPOINT ["k8s_podwatcher"]
+ENTRYPOINT ["k8s_podwatcher"]
 
