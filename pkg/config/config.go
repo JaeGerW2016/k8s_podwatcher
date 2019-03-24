@@ -39,11 +39,11 @@ func GetConfig() (*rest.Config, error) {
 	return nil, fmt.Errorf("could not locate a kubeconfig")
 }
 
-func GetConfigOrDie() *rest.Config {
+func GetConfigOrDie() (*rest.Config, error){
 	config, err := GetConfig()
 	if err != nil {
 		klog.Error(err, "unable to get kubeconfig")
 		os.Exit(1)
 	}
-	return config
+	return config, nil
 }

@@ -6,7 +6,7 @@ import (
 	"fmt"
 	amclient "github.com/prometheus/alertmanager/client"
 	promapi "github.com/prometheus/client_golang/api"
-	"k8s_podwatcher-master/pkg/handlers"
+	"k8s_podwatcher/pkg/handlers"
 	"net/http"
 	"strings"
 )

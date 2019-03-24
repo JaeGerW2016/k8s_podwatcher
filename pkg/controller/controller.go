@@ -11,7 +11,7 @@ import (
 	"k8s.io/client-go/tools/cache"
 	"k8s.io/client-go/util/workqueue"
 	"k8s.io/klog"
-	"k8s_podwatcher-master/pkg/handlers"
+	"k8s_podwatcher/pkg/handlers"
 )
 
 type Controller struct {

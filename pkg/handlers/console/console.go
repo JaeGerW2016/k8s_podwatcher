@@ -2,7 +2,7 @@ package console
 
 import (
 	"k8s.io/klog"
-	"k8s_podwatcher-master/pkg/handlers"
+	"k8s_podwatcher/pkg/handlers"
 )
 
 type handler struct {

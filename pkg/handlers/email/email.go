@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"gopkg.in/gomail.v1"
 	"html/template"
-	"k8s_podwatcher-master/pkg/handlers"
+	"k8s_podwatcher/pkg/handlers"
 	"strings"
 	"time"
 )

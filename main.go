@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/klog"
-	config2 "k8s_podwatcher-master/pkg/config"
-	"k8s_podwatcher-master/pkg/controller"
-	"k8s_podwatcher-master/pkg/handlers/email"
+	config2 "k8s_podwatcher/pkg/config"
+	"k8s_podwatcher/pkg/controller"
+	"k8s_podwatcher/pkg/handlers/email"
 	"log"
 	"os"
 	"os/signal"
@@ -19,7 +19,7 @@ func init() {
 	flag.Parse()
 }
 func main() {
-	config, err := config2.GetConfig()
+	config, err := config2.GetConfigOrDie()
 	if err != nil {
 		log.Panic(fmt.Sprintf("get config failed: %v", err))
 	}
