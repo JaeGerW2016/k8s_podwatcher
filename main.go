@@ -13,9 +13,11 @@ import (
 	"os/signal"
 	"syscall"
 )
+
 var namespace string
+
 func init() {
-	flag.StringVar(&namespace,"namespace","default","namespace")
+	flag.StringVar(&namespace, "namespace", "default", "namespace")
 	flag.Parse()
 }
 func main() {
@@ -34,13 +36,13 @@ func main() {
 	klog.Infof("Server version: %v", versionInfo)
 
 	stopCh := make(chan struct{})
-	sigsCh := make(chan os.Signal,1)
-	signal.Notify(sigsCh,syscall.SIGINT,syscall.SIGTERM)
+	sigsCh := make(chan os.Signal, 1)
+	signal.Notify(sigsCh, syscall.SIGINT, syscall.SIGTERM)
 	go func() {
 		sig := <-sigsCh
-		klog.Infof("got signal: %s",sig)
+		klog.Infof("got signal: %s", sig)
 		close(stopCh)
 	}()
 
-	controller.NewController(clientset,email.NewHaddler(),namespace).Run(stopCh)
+	controller.NewController(clientset, email.NewHaddler(), namespace).Run(stopCh)
 }
