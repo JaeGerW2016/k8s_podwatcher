@@ -6,7 +6,7 @@ WORKDIR $PKG_PATH
 
 ADD . .
 
-RUN CGO_ENABLED=0 go build -mod=vendor -a -installsuffix cgo -o /tmp/k8s_podwatcher
+RUN go build -o /tmp/k8s_podwatcher
 
 FROM alpine:latest
 

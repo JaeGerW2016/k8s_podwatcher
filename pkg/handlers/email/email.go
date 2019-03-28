@@ -55,8 +55,11 @@ func (*handler) Handle(event *handlers.Event) error {
 	if err := emailTemplate.Execute(buf, event); err != nil {
 		return fmt.Errorf("render template failed: %v", err)
 	}
-
 	message.SetBody("text/html", buf.String())
-	return gomail.NewMailer(smtpHost, smtpUsername, smtpPassword, smtpPort).Send(message)
 
+	d :=gomail.NewDialer(smtpHost,smtpPort,smtpUsername,smtpPassword)
+	if err := d.DialAndSend(message); err != nil {
+		fmt.Println(err)
+	}
+	return nil
 }
