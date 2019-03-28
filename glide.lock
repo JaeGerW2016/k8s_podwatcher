@@ -1,5 +1,5 @@
 hash: 040c8e31eda04ce75959e39eeabf4103bb377a36d3f1d9139ae08abfc3547079
-updated: 2019-03-22T14:49:34.9373671+08:00
+updated: 2019-03-28T10:12:08.0867786+08:00
 imports:
 - name: github.com/beorn7/perks
   version: 3a771d992973f24aa725d07868b467d1ddfceafb
@@ -80,7 +80,7 @@ imports:
   - internal/bitbucket.org/ww/goautoneg
   - model
 - name: github.com/prometheus/procfs
-  version: 40f3c57fb1983891f95378042bd0bfd590f52384
+  version: 55ae3d9d557340b5bc24cd8aa5f6fa2c2ab31352
   subpackages:
   - internal/util
   - iostats
